@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npx tsc *)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(sed -i 's/text-\\\\[5pt\\\\]/text-[9px]/g' pages/Analysis.tsx pages/Archive.tsx pages/Gallery.tsx pages/Workflows.tsx)",
+      "Bash(sed -i 's/text-\\\\[13pt\\\\]/text-[17px]/g' pages/Collections.tsx)"
+    ]
+  }
+}

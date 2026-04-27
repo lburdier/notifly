@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+  }
+
+  #root { height: 100%; }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
+
+  ::selection { background: rgba(255,255,255,0.15); }
+}
+
+@layer components {
+  /* Diamond marker — used like CV timeline bullets */
+  .diamond {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: #000;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .diamond-solid {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #fff;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* Dot pulse */
+  .dot-pulse {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pulse2 2s ease-in-out infinite;
+  }
+
+  /* Section header — CV-style */
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 16px;
+  }
+
+  .sec-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: #666;
+    text-transform: uppercase;
+  }
+
+  /* Mono chip — CV date/metadata style */
+  .mono-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: #999;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.06);
+    padding: 2px 7px;
+    flex-shrink: 0;
+  }
+
+  /* Tag — CV tag style */
+  .tag-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #777;
+    padding: 2px 7px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* Card */
+  .n-card {
+    background: rgba(14, 14, 14, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    transition: border-color 0.2s, backdrop-filter 0.2s;
+  }
+  .n-card:hover {
+    border-color: rgba(255,255,255,0.16);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Button styles */
+  .btn-ghost {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 5px 13px;
+    cursor: pointer;
+    background: transparent;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .btn-ghost:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .btn-solid {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #000;
+    background: #fff;
+    padding: 6px 16px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    transition: opacity 0.15s;
+  }
+  .btn-solid:hover { opacity: 0.85; }
+
+  /* Input */
+  .n-input {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #ccc;
+    padding: 7px 12px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.15s;
+  }
+  .n-input:focus { border-color: rgba(255,255,255,0.3); }
+  .n-input::placeholder { color: #555; }
+}
+
+/* Scrollable panels */
+.scroll-area {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
