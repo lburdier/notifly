@@ -1,4 +1,4 @@
-# Notifly — Creative Media OS
+# Notifly: Creative Media OS
 
 A media library interface for creatives: collect, sort, review and export images, videos, GIFs and web archives in one place.
 
